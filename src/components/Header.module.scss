@@ -1,0 +1,46 @@
+header {
+    background-color: $backgroundColor1;
+    width: 100%;
+    height: 102px;
+    padding: 31px 0px 31px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > .hodu {
+        width: 130px;
+        height: 40px;
+        margin-left: 320px;
+    }
+
+    > .menu {
+        height: 40px;
+        margin-right: 320px;
+        display: flex;
+        align-items: center;
+        font-size: $font3;
+        font-weight: $font3W;
+
+        > ul {
+            display: flex;
+            flex-direction: row;
+            width: 205px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            > li {
+                color: $black;
+            }
+        }
+
+        > .downloadButton {
+            width: 140px;
+            height: 50px;
+            background-color: $buttonBackground;
+            border-radius: 40px;
+            margin-left: 5%;
+            color: $white;
+        }
+    }
+}
