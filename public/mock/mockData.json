@@ -1,0 +1,28 @@
+{
+  "data": {
+      "page1": [
+          {"name": "cat1", "path": "/public/img/cat1.png"},
+          {"name": "cat2", "path": "/public/img/cat2.png"},
+          {"name": "cat3", "path": "/public/img/cat3.png"},
+          {"name": "cat4", "path": "/public/img/cat4.png"},
+          {"name": "cat5", "path": "/public/img/cat5.png"},
+          {"name": "cat6", "path": "/public/img/cat6.png"}
+      ],
+      "page2": [
+          {"name": "cat5", "path": "/public/img/cat5.png"},
+          {"name": "cat2", "path": "/public/img/cat2.png"},
+          {"name": "cat1", "path": "/public/img/cat1.png"},
+          {"name": "cat4", "path": "/public/img/cat4.png"},
+          {"name": "cat3", "path": "/public/img/cat3.png"},
+          {"name": "cat6", "path": "/public/img/cat6.png"}
+      ],
+      "page3": [
+          {"name": "cat1", "path": "/public/img/cat1.png"},
+          {"name": "cat2", "path": "/public/img/cat2.png"},
+          {"name": "cat6", "path": "/public/img/cat6.png"},
+          {"name": "cat5", "path": "/public/img/cat5.png"},
+          {"name": "cat4", "path": "/public/img/cat4.png"},
+          {"name": "cat3", "path": "/public/img/cat3.png"}
+      ]
+  }
+}

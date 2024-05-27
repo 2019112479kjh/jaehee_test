@@ -92,8 +92,8 @@ export default function Generator2() {
   }
 
   return (
-    <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <canvas ref={canvasRef} id="canvas" style={{ width: '80vw', height: '80vh' }}></canvas>
+    <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', paddingLeft: '55px'}}>
+      <canvas ref={canvasRef} id="canvas" style={{ width: '100%', height: '100%' }}></canvas>
     </div>
   );
 }

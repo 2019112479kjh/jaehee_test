@@ -1,16 +1,171 @@
 .banner {
     width: 100%;
-    height: 100vh;
+    height: 900px;
     position: relative;
     background-color: $backgroundColor1;
 
+    > .title {
+        position: absolute;
+        top: 200px;
+        width: 695px;
+        left: 320px;
+        font-size: $font1;
+        font-weight: $font1W;
+        color: $black;
+    }
+
+    > .titleDescription {
+        position: absolute;
+        top: 362px;
+        width: 420px;
+        left: 320px;
+        font-size: $font4;
+        font-weight: $font3W;
+        color: $black;
+    }
+
+    > .buttonBox {
+        position: absolute;
+        top: 488px;
+        left: 320px;
+    }
+
     > .model {
         position: absolute;
-        top: 20%;
+        display: flex;
+        top: 10%;
         right: 320px;
         width: 700px;
         height: 500px;
-        // background-color: aqua;
+    }
+}
+
+.description {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-color: $white;
+
+    > .cat {
+        position: absolute;
+        top: 50%;
+        width: 660px;
+        height: 390px;
+        left: 320px;
+        opacity: 0;
+        box-shadow: $boxShadow;
+        border-radius: $radius;
+        transform: translateY(-55%);
+        transition: all 0.5s ease-in-out;
+
+        &.leftUp {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+    }
+
+    &.active {
+        > .cat {
+            opacity: 1;
+            transform: translateY(-50%);
+        }
+
+        .cat:hover {
+            transform: translateY(-60%);
+        }
+    }
+
+    > .title {
+        position: absolute;
+        top: 35%;
+        width: 510px;
+        right: 320px;
+        transform: translateY(-35%);
+        font-size: $font2;
+        font-weight: $font1W;
+        color: $black;
+    }
+
+    > .titleDescription {
+        position: absolute;
+        top: 60%;
+        width: 510px;
+        right: 320px;
+        transform: translateY(-60%);
+        font-size: $font4;
+        font-weight: $font3W;
+        color: $black;
+    }
+}
+
+.ImgShowBox {
+    width: 100%;
+    height: 1300px;
+    position: relative;
+    background-color: $white;
+
+    > .title {
+        font-size: $font1;
+        font-weight: $font1W;
+        color: $orange;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    > .titleDescription {
+        position: absolute;
+        width: 710px;
+        top: 8%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: $font4;
+        font-weight: $font3W;
+        color: $black;
+        text-align: center;
+
+        > span {
+            color: $orange;
+        }
+    }
+
+    > .imgBox {
+        position: absolute;
+        top: 20%;
+        left: 320px;
+        width: 1278px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: 5.6%;
+        grid-row-gap: 9%;
+        
+        > img {
+            width: 378px;
+            height: 378px;
+            box-shadow: $boxShadow;
+            border-radius: $radius;
+        }
+    }
+
+    > .buttonBox {
+        width: 1278px;
+        height: 200px;
+        position: absolute;
+        bottom: 0%;
+        left: 320px;
+        border-bottom: 1px solid $gray;
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        gap: 10%;
+
+        > h2 {
+            font-size: $font3;
+            font-weight: $font1W;
+            color: $black;
+        }
     }
 }

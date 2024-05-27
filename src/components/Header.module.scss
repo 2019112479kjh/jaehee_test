@@ -18,7 +18,7 @@ header {
         margin-right: 320px;
         display: flex;
         align-items: center;
-        font-size: $font3;
+        font-size: $font4;
         font-weight: $font3W;
 
         > ul {
@@ -31,16 +31,10 @@ header {
             
             > li {
                 color: $black;
+                &:last-child {
+                    margin-right: 8%; 
+                }
             }
-        }
-
-        > .downloadButton {
-            width: 140px;
-            height: 50px;
-            background-color: $buttonBackground;
-            border-radius: 40px;
-            margin-left: 5%;
-            color: $white;
         }
     }
 }

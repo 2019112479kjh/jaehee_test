@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import HODU from '../assets/HODU.png';
+import { ButtonDefault } from './Button';
 
 export default function Header() {
     return (
@@ -13,7 +14,7 @@ export default function Header() {
                     <li><a href="#about">About</a></li>
                     <li><a href="#support">Support</a></li>
                 </ul>
-                <button className={styles.downloadButton}>Download</button>
+                <ButtonDefault text="Download"/>
             </nav>
         </header>
     );

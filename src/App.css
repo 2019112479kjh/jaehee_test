@@ -4,12 +4,10 @@
   margin: 0;
   position: relative;
   display: flex;
-  background-color: blue;
   flex-direction: column;
 }
 
 .content {
   width: 100%;
   min-height: 100%;
-  background-color: aqua;
 }
