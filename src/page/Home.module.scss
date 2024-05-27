@@ -169,3 +169,172 @@
         }
     }
 }
+
+.kakao {
+    width: 100%;
+    height: 850px;
+    position: relative;
+    background-color: $white;
+
+    > .title {
+        font-size: $font2;
+        font-weight: $font1W;
+        color: $black;
+        position: absolute;
+        left: 320px;
+        top: 4%;
+    }
+
+    > .titleDescription {
+        position: absolute;
+        top: 11%;
+        left: 320px;
+        font-size: $font4;
+        font-weight: $font3W;
+        color: $black;
+    }
+
+    > .map {
+        position: absolute;
+        top: 18%;
+        left: 320px;
+        width: 1278px;
+        height: 500px;
+        border-radius: 12px;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 340px;
+    position: relative;
+
+    > .title {
+        display: none;
+    }
+
+    > .banner {
+        width: 100%;
+        height: 340px;
+    }
+
+    > .emailForm {
+        position: absolute;
+        top: -30%;
+        left: 320px;
+        width: 1278px;
+        height: 201px;
+        background-color: $navy;
+        z-index: 10;
+        border-radius: $radius;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        > .emailBox {
+            width: 500px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            color: $white;
+            margin-left: 5%;
+            gap: 20%;
+
+            > h2 {
+                font-size: $font2;
+                font-weight: $font1W;
+            }
+
+            > p {
+                font-size: $font5;
+                font-weight: $font3W;
+            }
+        }
+
+        > .inputWrapper {
+            width: 590px;
+            height: 60px;
+            background-color: $white;
+            border-radius: $radius;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 5%;
+            padding-left: 30px;
+            padding-right: 10px;
+
+            > div {
+                width: 70%;
+                // background-color: aquamarine;
+                display: flex;
+                gap: 5%;
+                flex-direction: row;
+                
+                > svg {
+                    font-size: 20px;
+                    color: $gray2;
+                }
+
+                > input {
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.modalContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    width: 600px;
+    height: 400px;
+    border-radius: $radius;
+    background-image: url('../assets/modal.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+
+    > .modalTitle {
+        font-size: $font2;
+        font-weight: $font1W;
+        color: $orange;
+        padding-top: 3%;
+    }
+
+    > .modalDescription {
+        font-size: $font5;
+        font-weight: $font3W;
+        padding-bottom: 3%;
+    }
+
+    > .carIcon {
+        width: 110px;
+        height: 112px;
+    }
+
+
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+    pointer-events: auto;
+    overflow: hidden;
+}
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Button.module.scss';
 import PropTypes from 'prop-types';
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 const ButtonDefault = ({ text, name, buttonHandler }) => {
     return (
@@ -22,7 +23,7 @@ ButtonDefault.propTypes = {
  */
 const ButtonTop = () => {
     return (
-      <div className="buttonTop">
+      <div className={styles.buttonTop}>
         <button
           name="topBtn"
           className={styles.top}
@@ -33,11 +34,7 @@ const ButtonTop = () => {
             })
           }
         >
-          <svg viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 0L13.9282 12H0.0717969L7 0Z" />
-          </svg>
-  
-          <span>TOP</span>
+          <MdKeyboardArrowUp />
         </button>
       </div>
     );

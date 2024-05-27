@@ -9,12 +9,14 @@ import {
 import Header from './components/Header'
 import Footer from './components/Footer';
 import Home from './page/Home';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
   return (
     <div className="app">
       <Router basename="/">
+        <ScrollToTop />
         <Header />
         <main className="content">
           <Routes>

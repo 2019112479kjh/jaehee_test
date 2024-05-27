@@ -1,15 +1,23 @@
 import React from 'react';
 import styles from './Home.module.scss';
 import Generator from '../components/Generator';
-import { ButtonDefault } from '../components/Button';
+import { ButtonDefault, ButtonTop } from '../components/Button';
 import cat from '../assets/cat.png';
+import modal from '../assets/modal.png';
+import cat2 from '../assets/cat2.png';
+import footerCat from '../assets/footerCat.png';
 import { useEffect, useRef, useState } from 'react';
 import { catImg } from '../api/catImg';
+import { SlEnvolopeLetter } from "react-icons/sl";
+
+const { kakao } = window;
 
 export default function Home() {
     const elementRef = useRef([]);
     const [imageList, setImageList] = useState([]);
     const [pageInfo, setPageInfo] = useState(1);
+    const [modal, setModal] = useState(false);
+    const inputRef = useRef();
 
     const handleScroll = ([entry]) => {
         if (entry.isIntersecting) entry.target.classList.add(`${styles.active}`);
@@ -25,8 +33,29 @@ export default function Home() {
         observer.observe(el);
         });
 
+
         return () => observer?.disconnect();
     }, []);
+
+    useEffect(() => {
+        const mapContainer = document.getElementById('map'); 
+        if (mapContainer) {
+            const mapOption = {
+                center: new kakao.maps.LatLng(33.421332, 126.6719281), 
+                level: 3 
+            };
+
+            new kakao.maps.Map(mapContainer, mapOption);
+        } else {
+            console.error('Map container element not found');
+        }
+    }, []);
+
+    useEffect(() => {
+        if(modal) document.body.style.overflow = 'hidden';
+        else if(!modal) document.body.style.overflow = 'visible';
+        console.log(modal)
+    }, [modal]);
 
     useEffect(() => {
 
@@ -36,8 +65,18 @@ export default function Home() {
         
     }, [pageInfo]);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!inputRef.current.value.trim()) {
+            alert("Please enter your email address.");
+            return;
+        }
+        setModal(true);
+    };
+
     return (
         <>
+            {modal &&  <><div className={styles.backdrop} onClick={() => setModal(false)}></div><Modal setModal={setModal} /></>}
             <section className={styles.banner}>
                 <h1 className={styles.title}>Lorem Ipsum is simply dummy text of the printing and</h1>
                 <p className={styles.titleDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
@@ -68,7 +107,44 @@ export default function Home() {
                     <ButtonDefault text="Show more" buttonHandler={() => setPageInfo(pageInfo+1)}/>
                 </div>
             </article>
+
+            <article className={styles.kakao}>
+                <h1 className={styles.title}>Where you’ll be</h1>
+                <p className={styles.titleDescription}>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</p>
+                <div className={styles.map} id="map"></div>
+            </article>
+
+            <section className={styles.footer}>
+                <h1 className={styles.title}>이메일 입력</h1>
+                <img className={styles.banner} src={footerCat} alt='footer cat'/>
+                <div className={styles.emailForm}>
+                    <div className={styles.emailBox}>
+                        <h2>Subscribe to our Blog post</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text </p>
+                    </div>
+                    <form className={styles.inputWrapper} onSubmit={(e) => handleSubmit(e)}>
+                        <div>
+                            <SlEnvolopeLetter />
+                            <input type="text" placeholder="Enter your e-mail address" className={styles.input} ref={inputRef}/>
+                        </div>
+                        <ButtonDefault text="Subscribe" type="submit" buttonHandler={(e) => handleSubmit(e)}/>
+                    </form>
+                </div>
+            </section>
+
+            <ButtonTop />
         </>
     );
 }
 
+export function Modal({setModal}) {
+    console.log('5555')
+    return (
+        <section className={styles.modalContainer}>
+            <img src={cat2} alt='modal' className={styles.carIcon}/>
+            <h1 className={styles.modalTitle}>Thank you!</h1>
+            <p className={styles.modalDescription}>Lorem Ipsum is simply dummy text of the printing industry.</p>
+            <ButtonDefault text="OK! I Love HODU" buttonHandler={(e) => { e.preventDefault(); setModal(false); }}/>
+        </section>
+    ); 
+}
