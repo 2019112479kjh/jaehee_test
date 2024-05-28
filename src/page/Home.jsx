@@ -140,11 +140,11 @@ export default function Home() {
 export function Modal({setModal}) {
     
     return (
-        <section className={styles.modalContainer}>
+        <dialog className={styles.modalContainer}>
             <img src={cat2} alt='modal' className={styles.carIcon}/>
             <h1 className={styles.modalTitle}>Thank you!</h1>
             <p className={styles.modalDescription}>Lorem Ipsum is simply dummy text of the printing industry.</p>
             <ButtonDefault text="OK! I Love HODU" buttonHandler={(e) => { e.preventDefault(); setModal(false); }}/>
-        </section>
+        </dialog>
     ); 
 }
