@@ -3,7 +3,6 @@ import styles from './Home.module.scss';
 import Generator from '../components/Generator';
 import { ButtonDefault, ButtonTop } from '../components/Button';
 import cat from '../assets/cat.png';
-import modal from '../assets/modal.png';
 import cat2 from '../assets/cat2.png';
 import footerCat from '../assets/footerCat.png';
 import { useEffect, useRef, useState } from 'react';
@@ -125,6 +124,7 @@ export default function Home() {
                     <form className={styles.inputWrapper} onSubmit={(e) => handleSubmit(e)}>
                         <div>
                             <SlEnvolopeLetter />
+                            <label>Enter your e-mail address</label>
                             <input type="text" placeholder="Enter your e-mail address" className={styles.input} ref={inputRef}/>
                         </div>
                         <ButtonDefault text="Subscribe" type="submit" buttonHandler={(e) => handleSubmit(e)}/>
@@ -138,7 +138,7 @@ export default function Home() {
 }
 
 export function Modal({setModal}) {
-    console.log('5555')
+    
     return (
         <section className={styles.modalContainer}>
             <img src={cat2} alt='modal' className={styles.carIcon}/>

@@ -12,10 +12,10 @@ export default function Footer() {
             <img src={HODU} alt='HODU'className={styles.hodu}/>
             <nav className={styles.menu}>
                 <ul>
-                    <li><img src={footerIcon1} alt='footerIcon1'/></li>
-                    <li><img src={footerIcon2} alt='footerIcon2'/></li>
-                    <li><img src={footerIcon3} alt='footerIcon3'/></li>
-                    <li><img src={footerIcon4} alt='footerIcon4'/></li>
+                    <li><a href="#"><img src={footerIcon1} alt='footerIcon1'/></a></li>
+                    <li><a href="#"><img src={footerIcon2} alt='footerIcon2'/></a></li>
+                    <li><a href="#"><img src={footerIcon3} alt='footerIcon3'/></a></li>
+                    <li><a href="#"><img src={footerIcon4} alt='footerIcon4'/></a></li>
                 </ul>
             </nav>
         </footer>

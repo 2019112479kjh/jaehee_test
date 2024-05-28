@@ -277,6 +277,10 @@
                     color: $gray2;
                 }
 
+                > label {
+                    display: none;
+                }
+
                 > input {
                     border: none;
                     outline: none;
