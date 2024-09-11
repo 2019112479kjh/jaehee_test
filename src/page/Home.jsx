@@ -87,7 +87,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className={styles.description} ref={(el) => (elementRef.current[0] = el)}>
+            <section className={styles.intro} ref={(el) => (elementRef.current[0] = el)}>
                 <h1 className={styles.title}>Lorem Ipsum is simply dummy text of the printing and</h1>
                 <p className={styles.titleDescription}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
                 <img src={cat} alt='cat'className={`${styles.cat} ${styles.leftUp}`} />
@@ -95,7 +95,7 @@ export default function Home() {
 
             <article className={styles.ImgShowBox}>
                 <h1 className={styles.title}>dummy text of the printing and dummy</h1>
-                <p className={styles.titleDescription}>Lorem Ipsum is simply <span>dummy</span> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
+                <p className={styles.titleDescription}>Lorem Ipsum is simply <strong>dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</p>
                 <div className={styles.imgBox}>
                     {imageList.length!==0 &&imageList.map((image, index) => (
                         <img src={image.path} alt={image.name} key={index} />

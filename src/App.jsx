@@ -6,25 +6,23 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Header from './components/Header'
-import Footer from './components/Footer';
-import Home from './page/Home';
-import ScrollToTop from './components/ScrollToTop';
+import Message from './page/Message';
 
 function App() {
+  if (typeof global === 'undefined') {
+    window.global = window;
+  }
 
   return (
     <div className="app">
       <Router basename="/">
-        <ScrollToTop />
-        <Header />
         <main className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Message />} />
           </Routes>
         </main>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

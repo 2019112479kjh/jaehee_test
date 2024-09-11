@@ -17,10 +17,6 @@ ButtonDefault.propTypes = {
     buttonHandler: PropTypes.func,
 };
 
-/**
- * 페이지 최상단으로 올리는 TOP 버튼입니다. 클래스명을 사용해 위치를 직접 잡아야 합니다.
- * @className .buttonTop
- */
 const ButtonTop = () => {
     return (
       <div className={styles.buttonTop}>

@@ -10,5 +10,17 @@ export default defineConfig({
         additionalData: '@import "./src/default";' 
       }
     }
-  }
+  },
+  define: {
+    global: {}, 
+  },
+  server: {
+    proxy: {
+      '/stomp/content': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        ws: true, // Enable WebSocket proxying
+      },
+    },
+  },
 })
